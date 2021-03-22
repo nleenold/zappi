@@ -22,6 +22,11 @@ systemctl daemon-reload && systemctl enable elasticsearch && systemctl start ela
 systemctl daemon-reload && systemctl enable kibana && systemctl start kibana
 
 
+
 ##########################   Method 1 ################################
 ####### Install puppet for configuration management
 puppet module -y install wazuh-wazuh --version 4.0.4 
+
+##########################   Method 2 ################################
+####this is the agent.sh script
+echo "WAZUH_MANAGER="192.168.2.1" WAZUH_REGISTRATION_PASSWORD="R3mote_inst@ll" \ dnf -y install wazuh-agent" > /etc/puppet/modules/wazuh_module/files/agent.sh
